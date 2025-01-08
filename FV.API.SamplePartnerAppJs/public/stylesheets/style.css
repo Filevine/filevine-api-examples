@@ -1,0 +1,24 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.content {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(99, 99, 99);
+  padding-bottom: 5em;
+}
+
+dt { font-weight: bold; }
+dd { word-wrap: break-word; width: 800px;}
+
+table { table-layout: fixed; }
+table td:nth-child(1) { font-weight: bold; vertical-align: top; text-align: end; margin-right: 3px; }
+table th { font-weight: bold;}

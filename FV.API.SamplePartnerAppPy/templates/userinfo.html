@@ -1,0 +1,76 @@
+﻿{% extends 'layout.html' %}
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+<div class="content">
+<h1>Welcome <em>{{ orgUser.user.firstName  }}</em></h1>
+<h2>Filevine user details:</h2>
+
+<table>
+    <tr>
+        <td>Native User Id in Filevine:</td>
+        <td><em>{{ orgUser.orgUserId.native  }}</em></td>
+    </tr>
+    <tr>
+        <td>Username:</td>
+        <td><em>{{ orgUser.user.username }}</em></td>
+    </tr>
+    <tr>
+        <td>First Name:</td>
+        <td><em>{{ orgUser.user.firstName  }}</em></td>
+    </tr>
+    <tr>
+        <td>Last Name:</td>
+        <td><em>{{ orgUser.user.lastName  }}</em></td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td><em>{{ orgUser.user.email }}</em></td>
+    </tr>
+</table>
+<p><a href="/logout/">logout</a></p>
+
+<h2>Here are your orgs:</h2>
+
+<table>
+    <tr>
+        <th>Name:</th>
+        <th>OrgId:</th>
+    </tr>
+    {% for org in orgs.orgs %}
+        <tr>
+            <td>{{ org.name }}</td>
+            <td>{{ org.orgId }}</td>
+        </tr>
+    {% endfor %}
+
+</table>
+
+<h2>Here are your session details:</h2>
+    
+<table>
+    {% for key, value in sessionInfo %}
+    <tr>
+        <td>{{ key }}:</td>
+        <td>{{ value }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2>Here are your token details:</h2>
+<table>
+    {% for key, value in tokenItems %}
+      {% if key != 'userinfo' %}
+
+        <dl>
+            <dt>{{ key }}</dt>
+            <dd>{{ value }}</dd>
+        </dl>
+
+      {% endif %}
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

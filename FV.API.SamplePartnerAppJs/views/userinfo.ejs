@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- in views/users.ejs -->
+<html>
+
+<head>
+  <title>User Details</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+  <div class="content">
+    <h1>Welcome <em>
+        <%= orgUser.user.firstName %>
+      </em></h1>
+    <h2>Filevine user details:</h2>
+
+    <table>
+      <tr>
+        <td>Native User Id in Filevine:</td>
+        <td><em>
+            <%= orgUser.orgUserId.native %>
+          </em></td>
+      </tr>
+      <tr>
+        <td>Username:</td>
+        <td><em>
+            <%= orgUser.user.username%>
+          </em></td>
+      </tr>
+      <tr>
+        <td>First Name:</td>
+        <td><em>
+            <%= orgUser.user.firstName %>
+          </em></td>
+      </tr>
+      <tr>
+        <td>Last Name:</td>
+        <td><em>
+            <%= orgUser.user.lastName %>
+          </em></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><em>
+            <%= orgUser.user.email%>
+          </em></td>
+      </tr>
+    </table>
+    <form action="/logout">
+      <input type="submit" value="Logout" />
+    </form>
+
+
+    <h2>Here are your orgs:</h2>
+
+    <table>
+      <tr>
+        <th>Name:</th>
+        <th>OrgId:</th>
+      </tr>
+      <% orgs.forEach(function(org) { %>
+        <tr>
+          <td><%- org.name %></td>
+          <td><%- org.orgId %></td>
+        </tr>
+        <% }); %>
+    </table>
+
+    <h2>Here are your session details:</h2>
+
+    <table>
+      <% Object.keys(user).sort().forEach(function(item) { %>
+        <tr>
+          <% if(item !="tokenSet" ){ %>
+            <td><%- item %>:</td>
+            <td><%- user[item] %></td>
+            <% } %>
+        </tr>
+        <% }); %>
+    </table>
+
+    <h2>Here are your token details:</h2>
+
+    <table>
+      <% Object.keys(user.tokenSet).sort().forEach(function(item) { %>
+        <dl>
+          <dt><%- item %></dt>
+          <dd><%- user.tokenSet[item] %></dd>
+        </dl>
+        <% }); %>
+    </table>
+
+  </div>
+</body>
+
+</html>

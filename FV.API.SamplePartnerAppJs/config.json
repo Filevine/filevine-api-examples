@@ -1,0 +1,23 @@
+{
+    "port": 7059,
+    "expressSessionSecret": "your random session secret",
+    "fvApiGateway": {
+      "Url": "https://localhost:7001",
+      "Authority": "https://identity-dev-public.filevinedev.com",
+      "Authority2": "https://localhost:5004",
+      "ClientId": "2cdf6326-971f-4734-a860-852eb2bb02ef",
+      "ClientSecret": "",
+      "RedirectUri": "https://localhost:7059/signin-oidc",
+      "PostLogoutRedirectUri": "https://localhost:7059/logout/callback",
+      "ClockSkewSeconds": 5,
+      "Scopes": [
+        "email",
+        "profile",
+        "openid",
+        "tenant",
+        "offline_access",
+        "fv.auth.tenant.read",
+        "filevine.v2.api.*"
+      ]
+    }
+}

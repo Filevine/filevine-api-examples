@@ -1,0 +1,64 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.loginWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+
+textarea {
+  height: 50vh;
+}
+
+.content {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5em;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  word-wrap: break-word;
+  width: 800px;
+}
+
+table {
+  table-layout: fixed;
+}
+
+table td:nth-child(1) {
+  font-weight: bold;
+  vertical-align: top;
+  text-align: end;
+  margin-right: 3px;
+}
+
+table th {
+  font-weight: bold;
+}

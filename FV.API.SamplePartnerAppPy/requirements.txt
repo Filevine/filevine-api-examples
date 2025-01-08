@@ -1,0 +1,8 @@
+django
+django-extensions
+Werkzeug
+django-environ
+authlib
+requests
+pyopenssl
+djangorestframework
