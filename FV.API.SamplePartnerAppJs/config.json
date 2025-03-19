@@ -17,7 +17,8 @@
         "tenant",
         "offline_access",
         "fv.auth.tenant.read",
-        "filevine.v2.api.*"
+        "filevine.v2.api.*",
+        "fv.api.gateway.access"
       ]
     }
 }
